@@ -1,0 +1,11 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+# Disable health check - SSE connections are long-lived and may timeout health checks
+healthcheckPath = ""
+# Never restart unless it crashes
+restartPolicyType = "NEVER"
+# Single instance, no scaling
+numReplicas = 1
